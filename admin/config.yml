@@ -17,3 +17,8 @@ collections:
           - { label: "Site title", name: "title", widget: "string" }
           - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+
+backend:
+  name: github
+  repo: matthew-piziak/whereismila-site
+  branch: main
