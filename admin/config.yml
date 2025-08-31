@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: matthew-piziak/whereismila-site
   branch: main
 
 media_folder: "assets/uploads"      # where uploaded images go in the repo
@@ -17,8 +18,3 @@ collections:
           - { label: "Site title", name: "title", widget: "string" }
           - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-
-backend:
-  name: github
-  repo: matthew-piziak/whereismila-site
-  branch: main
