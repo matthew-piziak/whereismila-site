@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Where is Mila?</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.6; margin: 0; }
+    header { padding: 3rem 1rem; text-align: center; background: #f6f6f6; }
+    main { max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { margin: 0; font-size: 2.25rem; }
+    footer { text-align: center; color: #777; padding: 2rem 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="heading">Where is Mila?</h1>
+  </header>
+  <main id="body">
+    <p>Loading…</p>
+  </main>
+  <footer>© <span id="year"></span> Where is Mila</footer>
+
+  <!-- Marked: converts markdown → HTML -->
+  <script src="https://unpkg.com/marked/marked.min.js"></script>
+  <script>
+    // load homepage content
+    fetch('/content.json', { cache: 'no-store' })
+      .then(r => r.json())
+      .then(({ title, heading, body }) => {
+        if (title) document.title = title;
+        if (heading) document.getElementById('heading').textContent = heading;
+        if (body) document.getElementById('body').innerHTML = marked.parse(body);
+      })
+      .catch(() => {
+        document.getElementById('body').textContent = 'Unable to load content.';
+      });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

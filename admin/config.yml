@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"      # where uploaded images go in the repo
+public_folder: "/assets/uploads"    # how they’re referenced on the site
+
+collections:
+  - name: "site"
+    label: "Homepage"
+    files:
+      - file: "content.json"
+        label: "Main page content"
+        name: "home"
+        format: "json"
+        fields:
+          - { label: "Site title", name: "title", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
