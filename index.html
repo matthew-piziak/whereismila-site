@@ -5,11 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Where is Mila?</title>
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.6; margin: 0; }
-    header { padding: 3rem 1rem; text-align: center; background: #f6f6f6; }
-    main { max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
-    h1 { margin: 0; font-size: 2.25rem; }
-    footer { text-align: center; color: #777; padding: 2rem 1rem; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background: url('/assets/mountains.png') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #f6f6f6; /* fallback */
+    }
+
+    header, main, footer {
+      background: rgba(255, 255, 255, 0.8); /* faint white overlay */
+      backdrop-filter: blur(3px);
+    }
   </style>
 </head>
 <body>
